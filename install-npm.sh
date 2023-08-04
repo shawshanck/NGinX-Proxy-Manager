@@ -93,17 +93,17 @@ echo ""
 
 clear
 
-echo "Let's figure out which OS / Distro you are running."
-echo ""
-echo ""
-echo "    From some basic information on your system, you appear to be running: "
-echo "        --  OS Name        " $(lsb_release -i)
-echo "        --  Description        " $(lsb_release -d)
-echo "        --  OS Version        " $(lsb_release -r)
-echo "        --  Code Name        " $(lsb_release -c)
-echo ""
-echo "------------------------------------------------"
-echo ""
+echo -e "${YELLOW}Let's figure out which OS / Distro you are running.${NC}"
+echo -e ""
+echo -e ""
+echo -e "${GREEN}    From some basic information on your system, you appear to be running: ${NC}"
+echo -e "${GREEN}        --  OS Name            ${NC}" $(lsb_release -i)
+echo -e "${GREEN}        --  Description        ${NC}" $(lsb_release -d)
+echo -e "${GREEN}        --  OS Version         ${NC}" $(lsb_release -r)
+echo -e "${GREEN}        --  Code Name          ${NC}" $(lsb_release -c)
+echo -e ""
+echo -e "${YELLOW}------------------------------------------------${NC}"
+echo -e ""
 
 PS3="Please ente 1 to install NGinX Proxy Manager or 2 to exit setup. "
 select _ in \
