@@ -14,15 +14,15 @@ With this script, you can automatically install NGinX Proxy Manager on Docker.
 
 **After installation:**
 
-Navigate to your server hostname / IP address on port 81 to setup.
+- Navigate to your server hostname / IP address on port 81 to setup.
 
-Example: 0.0.0.0:81
+- Example: 0.0.0.0:81
 
 The default login credentials for NGinX Proxy Manager are:
 
-username: admin@example.com
+- username: admin@example.com
 
-password: changeme
+- password: changeme
 
 <hr>
 
