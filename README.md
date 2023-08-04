@@ -21,6 +21,14 @@ password: changeme
 
 <hr>
 
+<p align="center">
+<img src="https://cdn-images.imagevenue.com/ec/41/26/ME16PV86_o.PNG" width="600">
+<br>
+<img src="https://cdn-images.imagevenue.com/6f/d9/e8/ME16PV88_o.PNG" width="600">
+</p>
+
+<hr>
+
 ```
 mkdir docker && cd docker
 wget https://raw.githubusercontent.com/shawshanck/NGinX-Proxy-Manager/main/install-npm.sh
