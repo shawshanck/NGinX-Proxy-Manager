@@ -1,19 +1,28 @@
 #!/bin/bash
 
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+MAGENTA='\033[0;35m'
+CYAN='\033[0;36m'
+GRAY='\033[0;37m'
+NC='\033[0m' # No Color
+
 installApps()
 {
     clear
     OS="$REPLY" ## <-- This $REPLY is about OS Selection
-    echo "You can Install NGinX Proxy Manager with this script!"
-    echo "Please select 'y' for each item you would like to install."
-    echo "NOTE: Without Docker and Docker-Compose, you cannot install this container."
-    echo ""
-    echo "To install Docker and Docker-Compose, use the link below:"
-    echo "https://github.com/shawshanck/Docker-and-Docker-Compose"
-    echo ""
-    echo "Provided to you by Mohammad Mohammadpour"
-    echo "https://github.com/shawshanck"
-    echo ""
+    echo -e "${NC}You can Install ${GREEN}NGinX Proxy Manager${NC} with this script!${NC}"
+    echo -e "Please select ${GREEN}'y'${NC} for each item you would like to install."
+    echo -e "${RED}NOTE:${NC} Without Docker and Docker-Compose, you cannot install this container.${NC}"
+    echo -e ""
+    echo -e "To install Docker and Docker-Compose, use the link below:"
+    echo -e "${GREEN}https://github.com/shawshanck/Docker-and-Docker-Compose${NC}"
+     echo -e ""
+    echo -e "      ${CYAN}Provided to you by ${YELLOW}Mohammad Mohammadpour${NC}"
+    echo -e "          ${YELLOW}https://github.com/shawshanck${NC}"
+    echo -e ""
     
     ISACT=$( (sudo systemctl is-active docker ) 2>&1 )
     ISCOMP=$( (docker-compose -v ) 2>&1 )
@@ -34,9 +43,6 @@ startInstall()
     echo ""
     sleep 3s
 
-#######################################################
-###           Install for Debian / Ubuntu           ###
-#######################################################
 
     if [[ "$NPM" == [yY] ]]; then
         echo "##########################################"
@@ -61,20 +67,21 @@ startInstall()
           sudo docker-compose up -d
         fi
 
-        echo "    3. You can find NGinX Proxy Manager files at ./docker/nginx-proxy-manager"
-        echo ""
-        echo "    Navigate to your server hostname / IP address on port 81 to setup"
-        echo "    Example: 0.0.0.0:81"
-        echo ""
-        echo "    The default login credentials for NGinX Proxy Manager are:"
-        echo "        username: admin@example.com"
-        echo "        password: changeme"
+        echo -e "    3. You can find NGinX Proxy Manager files at ./docker/nginx-proxy-manager"
+        echo -e ""
+        echo -e "${NC}    Navigate to your ${GREEN}server hostname / IP address on ${GREEN}port 81${NC} to setup${NC}"
+        echo -e "    Example: 0.0.0.0:81"
+        echo -e ""
+        echo -e ""
+        echo -e "    The default login credentials for NGinX Proxy Manager are:"
+        echo -e "${GREEN}        username: ${CYAN}admin@example.com${NC}"
+        echo -e "${GREEN}        password: ${CYAN}changeme${NC}"
 
-        echo ""
-        echo ""
-        echo "Provided to you by Mohammad Mohammadpour"
-        echo "https://github.com/shawshanck"       
-        sleep 3s
+        echo -e ""
+        echo -e ""
+        echo -e "      ${CYAN}Provided to you by ${YELLOW}Mohammad Mohammadpour${NC}"
+        echo -e "          ${YELLOW}https://github.com/shawshanck${NC}"
+        echo -e ""
         cd
     fi
     
@@ -90,32 +97,22 @@ echo "Let's figure out which OS / Distro you are running."
 echo ""
 echo ""
 echo "    From some basic information on your system, you appear to be running: "
-echo "        --  OS Name            " $(lsb_release -i)
+echo "        --  OS Name        " $(lsb_release -i)
 echo "        --  Description        " $(lsb_release -d)
-echo "        --  OS Version         " $(lsb_release -r)
-echo "        --  Code Name          " $(lsb_release -c)
+echo "        --  OS Version        " $(lsb_release -r)
+echo "        --  Code Name        " $(lsb_release -c)
 echo ""
 echo "------------------------------------------------"
 echo ""
 
-PS3="Please select the number for your OS / distro: "
+PS3="Please ente 1 to install NGinX Proxy Manager or 2 to exit setup. "
 select _ in \
-    "CentOS 7 / 8 / Fedora" \
-    "Debian 10 / 11" \
-    "Ubuntu 18.04" \
-    "Ubuntu 20.04 / 21.04 / 22.04" \
-    "Arch Linux" \
-    "Open Suse"\
-    "End this Installer"
+    "Install" \
+    "Exit"
 do
   case $REPLY in
     1) installApps ;;
-    2) installApps ;;
-    3) installApps ;;
-    4) installApps ;;
-    5) installApps ;;
-    6) installApps ;;
-    7) exit ;;
+    2) exit ;;
     *) echo "Invalid selection, please try again..." ;;
   esac
 done
