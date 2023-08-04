@@ -10,6 +10,19 @@
 >**Note**: Without Docker and Docker-Compose it fails. [First install Docker and Docker-Compose from here](https://github.com/shawshanck/Docker-and-Docker-Compose).
 
 <hr>
+
+<h2>Installation:</h2>
+
+Just copy and paste the commands below and press enter!
+
+```
+mkdir docker && cd docker
+wget https://raw.githubusercontent.com/shawshanck/NGinX-Proxy-Manager/main/install-npm.sh
+chmod +x install-npm.sh
+./install-npm.sh
+```
+
+<hr>
 <h2>Web Interface:</h2>
 
 **After installation:**
@@ -33,10 +46,3 @@ The default login credentials for NGinX Proxy Manager are:
 </p>
 
 <hr>
-
-```
-mkdir docker && cd docker
-wget https://raw.githubusercontent.com/shawshanck/NGinX-Proxy-Manager/main/install-npm.sh
-chmod +x install-npm.sh
-./install-npm.sh
-```
