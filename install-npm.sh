@@ -107,7 +107,7 @@ echo -e ""
 
 PS3="Please enter 1 to install NGinX Proxy Manager or 2 to exit setup. "
 select _ in \
-    "Install" \
+    "Install NGinX Proxy Manager" \
     "Exit"
 do
   case $REPLY in
