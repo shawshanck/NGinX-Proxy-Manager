@@ -69,7 +69,7 @@ startInstall()
 
         echo -e "    3. You can find NGinX Proxy Manager files at ./docker/nginx-proxy-manager"
         echo -e ""
-        echo -e "${NC}    Navigate to your ${GREEN}server hostname / IP address on ${GREEN}port 81${NC} to setup${NC}"
+        echo -e "${NC}    Navigate to your ${GREEN}server hostname / IP address ${NC}on ${GREEN}port 81${NC} to setup${NC}"
         echo -e "    Example: 0.0.0.0:81"
         echo -e ""
         echo -e ""
@@ -105,7 +105,7 @@ echo -e ""
 echo -e "${YELLOW}------------------------------------------------${NC}"
 echo -e ""
 
-PS3="Please ente 1 to install NGinX Proxy Manager or 2 to exit setup. "
+PS3="Please enter 1 to install NGinX Proxy Manager or 2 to exit setup. "
 select _ in \
     "Install" \
     "Exit"
