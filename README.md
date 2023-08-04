@@ -19,6 +19,7 @@ username: admin@example.com
 
 password: changeme
 
+<hr>
 
 ```
 mkdir docker && cd docker
