@@ -4,7 +4,7 @@ With this script, you can automatically install NGinX Proxy Manager on Docker.
 
 >**Note**: Without Docker and Docker-Compose it fails. [First install Docker and Docker-Compose from here](https://github.com/shawshanck/Docker-and-Docker-Compose).
 
-
+<br>
 <h2>Web Interface:</h2>
 
 **After installation:**
