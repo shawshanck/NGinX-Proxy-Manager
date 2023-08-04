@@ -2,7 +2,7 @@
 
 ```
 mkdir docker && cd docker
-wget https://raw.githubusercontent.com/shawshanck/NGinX-Proxy-Manager/main/install.sh
-chmod +x install.sh
-./install.sh
+wget https://raw.githubusercontent.com/shawshanck/NGinX-Proxy-Manager/main/install-npm.sh
+chmod +x install-npm.sh
+./install-npm.sh
 ```
