@@ -269,6 +269,9 @@ startInstall()
         sleep 3s
         cd
     fi
+    
+    exit 1
+}
 
 echo ""
 echo ""
