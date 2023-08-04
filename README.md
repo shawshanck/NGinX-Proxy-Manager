@@ -1,7 +1,7 @@
-<p align="center"><h1>"NGinX Proxy Manager"</h1></p>
+<h1 align="center">"NGinX Proxy Manager"</h1></p>
 
 <p align="center">
-<img src="https://cdn-images.imagevenue.com/f7/a3/1a/ME16PV8G_o.png" width="200">
+<img src="https://cdn-images.imagevenue.com/f7/a3/1a/ME16PV8G_o.png" width="100">
 <br>
 </p>
 
