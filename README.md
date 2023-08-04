@@ -1,4 +1,9 @@
-<h1>"NGinX Proxy Manager"</h1>
+<p align="center"><h1>"NGinX Proxy Manager"</h1></p>
+
+<p align="center">
+<img src="https://cdn-images.imagevenue.com/f7/a3/1a/ME16PV8G_o.png" width="200">
+<br>
+</p>
 
 With this script, you can automatically install NGinX Proxy Manager on Docker.
 
