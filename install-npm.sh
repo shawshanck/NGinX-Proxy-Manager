@@ -61,11 +61,8 @@ startInstall()
         echo ""
         echo ""
 
-        if [[ "$OS" == "1" ]]; then
           docker-compose up -d
-        else
           sudo docker-compose up -d
-        fi
 
         echo -e "    3. You can find NGinX Proxy Manager files at ./docker/nginx-proxy-manager"
         echo -e ""
