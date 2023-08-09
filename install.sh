@@ -8,18 +8,19 @@ MAGENTA='\033[0;35m'
 CYAN='\033[0;36m'
 GRAY='\033[0;37m'
 NC='\033[0m' # No Color
+myIP="$(dig +short myip.opendns.com @resolver1.opendns.com)"
 
 installApps()
 {
     clear
-    OS="$REPLY" ## <-- This $REPLY is about OS Selection
+    OS="$REPLY" ## <-- This $REPLY = OS Selection
     echo -e "${NC}You can Install ${GREEN}NGinX Proxy Manager${NC} with this script!${NC}"
     echo -e "Please select ${GREEN}'y'${NC} for each item you would like to install."
     echo -e "${RED}NOTE:${NC} Without Docker and Docker-Compose, you cannot install this container.${NC}"
     echo -e ""
     echo -e "To install Docker and Docker-Compose, use the link below:"
     echo -e "${GREEN}https://github.com/shawshanck/Docker-and-Docker-Compose${NC}"
-     echo -e ""
+    echo -e ""
     echo -e "      ${CYAN}Provided to you by ${YELLOW}Mohammad Mohammadpour${NC}"
     echo -e "          ${YELLOW}https://github.com/shawshanck${NC}"
     echo -e ""
@@ -37,43 +38,42 @@ installApps()
 startInstall() 
 {
     clear
-    echo "#######################################################"
-    echo "###         Preparing for Installation              ###"
-    echo "#######################################################"
-    echo ""
+    echo -e "*******************************************************"
+    echo -e "***         Preparing for Installation              ***"
+    echo -e "*******************************************************"
+    echo -e ""
     sleep 3s
 
 
     if [[ "$NPM" == [yY] ]]; then
-        echo "##########################################"
-        echo "###     Install NGinX Proxy Manager    ###"
-        echo "##########################################"
+        echo -e "*******************************************************"
+        echo -e "***         Install NGinX Proxy Manager             ***"
+        echo -e "*******************************************************"
     
         # pull an nginx proxy manager docker-compose file from github
-        echo "    1. Pulling a default NGinX Proxy Manager docker-compose.yml file."
+        echo -e "${MAGENTA}      1.${NC}${GREEN} Pulling a default NGinX Proxy Manager docker-compose.yml file.${NC}"
 
         mkdir -p docker/nginx-proxy-manager
         cd docker/nginx-proxy-manager
 
         curl https://raw.githubusercontent.com/shawshanck/NGinX-Proxy-Manager/main/nginx_proxy_manager.yml -o docker-compose.yml >> ~/docker-script-install.log 2>&1
 
-        echo "    2. Running the docker-compose.yml to install and start NGinX Proxy Manager"
+        echo -e "${MAGENTA}      2.${NC}${GREEN} Running the docker-compose.yml to install and start NGinX Proxy Manager.${NC}"
         echo ""
         echo ""
 
           docker-compose up -d
           sudo docker-compose up -d
 
-        echo -e "    3. You can find NGinX Proxy Manager files at ./docker/nginx-proxy-manager"
+        echo -e "${MAGENTA}      3.${NC}${GREEN} Installation completed.${NC}"
         echo -e ""
-        echo -e "${NC}    Navigate to your ${GREEN}server hostname / IP address ${NC}on ${GREEN}port 81${NC} to setup${NC}"
-        echo -e "    Example: 0.0.0.0:81"
+        echo -e "${NC}      Navigate to your ${GREEN}server hostname ${NC}/${GREEN} IP address ${NC}on ${GREEN}port 81${NC}"
+        echo -e "${NC}      NGinX is running on: http://${GREEN}${myIP}:81${NC}"
         echo -e ""
         echo -e ""
-        echo -e "    The default login credentials for NGinX Proxy Manager are:"
-        echo -e "${GREEN}        username: ${CYAN}admin@example.com${NC}"
-        echo -e "${GREEN}        password: ${CYAN}changeme${NC}"
-
+        echo -e "${NC}      The default login credentials for NGinX Proxy Manager are:"
+        echo -e "${GREEN}      username: ${CYAN}admin@example.com${NC}"
+        echo -e "${GREEN}      password: ${CYAN}changeme${NC}"
         echo -e ""
         echo -e ""
         echo -e "      ${CYAN}Provided to you by ${YELLOW}Mohammad Mohammadpour${NC}"
@@ -102,7 +102,7 @@ echo -e ""
 echo -e "${YELLOW}------------------------------------------------${NC}"
 echo -e ""
 
-PS3="Please enter 1 to install NGinX Proxy Manager or 2 to exit setup. "
+PS3="Please enter 1 to install NGinX Proxy Manager or 2 to exit setup: "
 select _ in \
     "Install NGinX Proxy Manager" \
     "Exit"
