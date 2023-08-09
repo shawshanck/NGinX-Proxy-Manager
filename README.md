@@ -15,11 +15,15 @@
 
 Just copy and paste the commands below and press enter!
 
+First, install curl:
+
 ```
-mkdir docker && cd docker
-wget https://raw.githubusercontent.com/shawshanck/NGinX-Proxy-Manager/main/install-npm.sh
-chmod +x install-npm.sh
-./install-npm.sh
+apt install curl
+```
+Then use the command below:
+
+```
+bash <(curl -Ls https://raw.githubusercontent.com/shawshanck/NGinX-Proxy-Manager/main/install.sh --ipv4)
 ```
 
 <hr>
